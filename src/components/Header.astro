@@ -89,33 +89,4 @@
 
 		observer.observe(heroHeader);
 	})();
-
-	// Effet parallax léger sur la volute
-	(function() {
-		const volute = document.getElementById('volute-parallax');
-		if (!volute) return;
-
-		let ticking = false;
-
-		function updateParallax() {
-			const scrolled = window.scrollY;
-			const heroHeight = document.getElementById('hero-header')?.offsetHeight || 800;
-			
-			// Ne déplacer que si on est dans la zone du hero
-			if (scrolled < heroHeight) {
-				const parallaxSpeed = 0.6; // Vitesse du parallax (0.6 = plus prononcé)
-				const yPos = scrolled * parallaxSpeed;
-				volute.style.transform = `translate(-50%, calc(-50% + ${yPos}px))`;
-			}
-			
-			ticking = false;
-		}
-
-		window.addEventListener('scroll', function() {
-			if (!ticking) {
-				window.requestAnimationFrame(updateParallax);
-				ticking = true;
-			}
-		});
-	})();
 </script>
