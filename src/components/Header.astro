@@ -2,7 +2,24 @@
 // Header avec navigation et image flottante de fond
 ---
 
-<header class="relative isolate bg-rose text-white overflow-hidden">
+<!-- Header Sticky (apparaît après scroll) -->
+<nav 
+	id="sticky-header" 
+	class="fixed top-0 left-0 right-0 z-50 bg-rose text-white shadow-lg transition-transform duration-300 -translate-y-full"
+	aria-label="Navigation sticky"
+>
+	<div class="max-w-[100rem] mx-auto px-10 py-3">
+		<ul class="grid grid-cols-4 text-[11px] md:text-[13px] uppercase tracking-[0.35em] font-title">
+			<li class="justify-self-start opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
+			<li class="justify-self-center opacity-90 hover:opacity-100 transition"><a href="#services">Service</a></li>
+			<li class="justify-self-center opacity-90 hover:opacity-100 transition"><a href="#avis">Avis Clients</a></li>
+			<li class="justify-self-end opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+</nav>
+
+<!-- Header Hero (original) -->
+<header id="hero-header" class="relative isolate bg-rose text-white overflow-hidden">
 	<div class="section !py-4">
 		<nav aria-label="Navigation principale">
 			<ul class="grid grid-cols-4 text-[13px] md:text-sm uppercase tracking-[0.35em] font-title">
@@ -30,3 +47,33 @@
 		<a href="#contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
 	</div>
 </header>
+
+<script>
+	// Script pour afficher/masquer le header sticky
+	(function() {
+		const heroHeader = document.getElementById('hero-header');
+		const stickyHeader = document.getElementById('sticky-header');
+		
+		if (!heroHeader || !stickyHeader) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Le hero est visible, cacher le sticky header
+						stickyHeader.classList.add('-translate-y-full');
+					} else {
+						// Le hero n'est plus visible, afficher le sticky header
+						stickyHeader.classList.remove('-translate-y-full');
+					}
+				});
+			},
+			{
+				threshold: 0,
+				rootMargin: '-1px'
+			}
+		);
+
+		observer.observe(heroHeader);
+	})();
+</script>
