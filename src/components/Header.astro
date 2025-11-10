@@ -9,11 +9,19 @@
 	aria-label="Navigation sticky"
 >
 	<div class="max-w-[100rem] mx-auto px-10 py-3">
-		<ul class="grid grid-cols-4 text-[11px] md:text-[13px] uppercase tracking-[0.35em] font-title">
-			<li class="justify-self-start opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
-			<li class="justify-self-center opacity-90 hover:opacity-100 transition"><a href="#services">Service</a></li>
-			<li class="justify-self-center opacity-90 hover:opacity-100 transition"><a href="#avis">Avis Clients</a></li>
-			<li class="justify-self-end opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
+		<ul class="flex items-center justify-between text-[11px] md:text-[13px] uppercase tracking-[0.35em] font-title">
+			<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
+			<li class="opacity-90 hover:opacity-100 transition"><a href="#services">Service</a></li>
+			
+			<!-- Logo au centre -->
+			<li class="mx-6">
+				<a href="/" class="block">
+					<img src="/logo.svg" alt="Christelle Piguel" class="h-8 w-auto" />
+				</a>
+			</li>
+			
+			<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
+			<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
 		</ul>
 	</div>
 </nav>
@@ -22,11 +30,19 @@
 <header id="hero-header" class="relative isolate bg-rose text-white overflow-hidden">
 	<div class="section !py-4">
 		<nav aria-label="Navigation principale">
-			<ul class="grid grid-cols-4 text-[13px] md:text-sm uppercase tracking-[0.35em] font-title">
-				<li class="justify-self-start opacity-90 hover:opacity-100"><a href="#presentation">Présentation</a></li>
-				<li class="justify-self-center opacity-90 hover:opacity-100"><a href="#services">Service</a></li>
-				<li class="justify-self-center opacity-90 hover:opacity-100"><a href="#avis">Avis Clients</a></li>
-				<li class="justify-self-end opacity-90 hover:opacity-100"><a href="#contact">Contact</a></li>
+			<ul class="flex items-center justify-between text-[13px] md:text-sm uppercase tracking-[0.35em] font-title">
+				<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
+				<li class="opacity-90 hover:opacity-100 transition"><a href="#services">Service</a></li>
+				
+				<!-- Logo au centre -->
+				<li class="mx-8">
+					<a href="/" class="block">
+						<img src="/logo.svg" alt="Christelle Piguel" class="h-10 md:h-12 w-auto" />
+					</a>
+				</li>
+				
+				<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
+				<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
