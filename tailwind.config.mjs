@@ -4,11 +4,16 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				accent: '#2337ff',
-				'accent-dark': '#000d8a',
+				rose: '#AB7D77',
+				rose2: '#C2A797',
+				brun: '#9B7760',
+				noir: '#272626',
+				ivoire: '#F7F6F4',
 			},
 			fontFamily: {
-				sans: ['Atkinson', 'sans-serif'],
+				title: ['Montserrat', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				body: ['Gotham', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				btn: ['Lexend Exa', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			},
 		},
 	},

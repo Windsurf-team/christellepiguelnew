@@ -4,35 +4,190 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<h1>🧑‍🚀 Hello, Astronaut!</h1>
-	<p>
-		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-		template serves as a lightweight, minimally-styled starting point for anyone looking to build
-		a personal website, blog, or portfolio with Astro.
-	</p>
-	<p>
-		This template comes with a few integrations already configured in your
-		<code>astro.config.mjs</code> file. You can customize your setup with
-		<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-		React, or Vue to your project.
-	</p>
-	<p>Here are a few ideas on how to get started with the template:</p>
-	<ul>
-		<li>Edit this page in <code>src/pages/index.astro</code></li>
-		<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-		<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-		<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-		<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-	</ul>
-	<p>
-		Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-			>read the docs
-		</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-	</p>
-	<p>
-		Looking for a blog template with a bit more personality? Check out <a
-			href="https://github.com/Charca/astro-blog-template"
-			>astro-blog-template
-		</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-	</p>
+	<!-- ===== POURQUOI FAIRE APPEL ===== -->
+	<section id="reasons" class="bg-[#F7F6F4]">
+		<div class="section">
+			<h2 class="title-section reveal reveal-slow" data-animate>
+				Pourquoi faire appel à une assistante de<br class="hidden md:block" /> direction externalisée ?
+			</h2>
+
+			<div class="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-16">
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">01</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Gagner du temps</h3>
+						<p class="para mt-2 w-full">Libérez-vous des tâches administratives, comptables et RH pour rester concentré·e sur l'essentiel.</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">02</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Interventions flexibles</h3>
+						<p class="para mt-2 w-full">Appui ponctuel ou régulier, sur site ou à distance, selon vos pics d'activité et vos priorités.</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">03</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Maîtriser vos obligations Qualiopi</h3>
+						<p class="para mt-2 w-full">Mise en conformité, gestion documentaire et accompagnement des formateurs pour réussir vos audits.</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">04</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Renforcer votre efficacité</h3>
+						<p class="para mt-2 w-full">Organisation, reporting, tableaux de bord… pour une meilleure gestion quotidienne de votre activité.</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">05</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Structurer vos RH & votre comptabilité</h3>
+						<p class="para mt-2 w-full">Gestion des documents salariés, OPCO, factures, notes de frais et relances en lien avec vos cabinets.</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-5 reveal" data-animate>
+					<span class="big-num shrink-0 leading-none mt-[-4px]">06</span>
+					<div>
+						<h3 class="uppercase tracking-[0.25em] text-[13px] font-title">Bénéficier d'une expertise polyvalente</h3>
+						<p class="para mt-2 w-full">Plus de 20 ans d'expérience au service de dirigeant·es exigeant·es dans tous secteurs.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== PRESENTATION ===== -->
+	<section id="presentation" class="bg-ivoire">
+		<div class="section">
+			<h2 class="title-section mb-16 reveal reveal-slow" data-animate>
+				Christelle Piguel — Assistante de direction externalisée
+			</h2>
+
+			<!-- Colonnes 50/50 pour symétrie -->
+			<div class="grid md:grid-cols-2 gap-12 items-center">
+				<!-- Texte -->
+				<div class="reveal" data-animate>
+					<p class="para mb-4">
+						Je mets mon expertise au service des dirigeant·es de TPE, PME et cabinets de conseil
+						pour prendre en charge leur gestion administrative, commerciale, comptable, RH et formation
+						(certification Qualiopi).
+					</p>
+					<p class="para mb-8">
+						J'interviens en toute autonomie, sur site ou à distance, pour leur permettre de se recentrer
+						sur leur cœur de métier et développer leur activité.
+					</p>
+					<a href="#contact" class="btn btn-primary">Contactez-moi</a>
+				</div>
+
+				<!-- Cadre + image symétriques -->
+				<div class="bg-rose2 rounded-2xl shadow-lg w-full mx-auto flex items-center justify-center h-[420px] reveal" data-animate>
+					<div class="w-[96%] h-[90%] rounded-xl overflow-hidden shadow-md">
+						<img src="/assets/visuel-horizontal.jpg" alt="Illustration paysage ou bureau" class="w-full h-full object-cover" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== CE QUE VOUS GAGNEZ ===== -->
+	<section class="bg-brun text-white">
+		<div class="section text-center">
+			<h2 class="title-section !text-white tracking-[0.7em] reveal reveal-slow" data-animate>Ce que vous gagnez avec moi</h2>
+			<div class="mt-8 md:mt-10 space-y-6">
+				<p class="para !text-white/90 max-w-4xl mx-auto reveal" data-animate>En tant qu'interlocutrice unique, je m'adapte à votre rythme et à vos priorités.</p>
+				<p class="para !text-white/90 max-w-4xl mx-auto reveal" data-animate>Je suis opérationnelle rapidement, autonome sur vos outils, et garante de la confidentialité de vos données.</p>
+				<p class="para !text-white/90 max-w-4xl mx-auto reveal" data-animate>Mon accompagnement est toujours sur mesure, dans une logique d'efficacité, de souplesse et de rigueur – y compris pour des missions sensibles comme la conformité Qualiopi ou le suivi RH.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== MES PRESTATIONS ===== -->
+	<section id="services" class="bg-ivoire">
+		<div class="section">
+			<h2 class="title-section mb-12 reveal reveal-slow" data-animate>Mes prestations</h2>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Assistanat de direction</span>
+						<p class="para mt-4">Structuration de l'agenda, dossiers, déplacements et comptes rendus pour retrouver une journée fluide et maîtrisée.</p>
+					</div>
+				</article>
+
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Assistanat comptable</span>
+						<p class="para mt-4">En lien avec votre cabinet : centralisation des pièces, rapprochements bancaires, notes de frais et relances — visibilité sans perte de temps.</p>
+					</div>
+				</article>
+
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Formation / Qualiopi</span>
+						<p class="para mt-4">Mise en conformité Qualiopi : preuves, dossiers partagés, convocations, émargements et accompagnement des formateurs avant audit.</p>
+					</div>
+				</article>
+
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Assistanat commercial</span>
+						<p class="para mt-4">CRM, relances ciblées, suivi prospects et préparation de rendez-vous pour transformer vos contacts en opportunités concrètes.</p>
+					</div>
+				</article>
+
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Assistanat RH</span>
+						<p class="para mt-4">Dossiers collaborateurs, contrats, visites médicales, congés, paie/OPCO, tableaux de bord — une équipe bien suivie et des fichiers à jour.</p>
+					</div>
+				</article>
+
+				<article class="bg-white rounded-2xl border border-rose2/50 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition reveal" data-animate>
+					<div class="p-6 md:p-7">
+						<span class="title-card">Événements pro</span>
+						<p class="para mt-4">De l'idée au débrief : repérage lieux, invitations, logistique et coordination. Ambiance maîtrisée, résultats au rendez-vous.</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== DES QUESTIONS ? ===== -->
+	<section class="bg-ivoire text-center">
+		<div class="section !py-20">
+			<h2 class="title-section mb-8 reveal reveal-slow" data-animate>Des questions ?</h2>
+			<p class="para mb-10 reveal" data-animate>Chaque mission est adaptée à vos besoins spécifiques, à votre secteur et à vos objectifs. Mon rôle est de vous accompagner pas à pas pour créer une solution sur mesure, efficace et alignée avec votre vision. Discutons ensemble de votre projet et voyons comment lui donner toute sa portée.</p>
+			<a href="#contact" class="btn btn-primary reveal" data-animate>Contactez-moi</a>
+		</div>
+	</section>
 </Layout>
+
+<script>
+	// Script d'animation au scroll (IntersectionObserver)
+	(function () {
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		const els = document.querySelectorAll('[data-animate]');
+		els.forEach((el) => {
+			if (!el.classList.contains('reveal')) el.classList.add('reveal');
+		});
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-inview');
+						io.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+		);
+		els.forEach((el) => io.observe(el));
+	})();
+</script>
