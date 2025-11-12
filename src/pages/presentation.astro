@@ -1,23 +1,110 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
 ---
 
 <Layout 
 	title="Présentation — Christelle Piguel" 
 	description="Découvrez qui je suis, mon parcours et ma passion pour l'assistanat professionnel."
 >
-	<Hero title="À propos de moi" subtitle="Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel." />
-
-	<!-- Title & intro (placed outside the hero) -->
-	<section class="bg-ivoire">
-		<div class="section text-center py-8">
-			<h1 class="title-section mb-6 reveal reveal-slow" data-animate>À propos de moi</h1>
-			<p class="para text-lg max-w-3xl mx-auto reveal" data-animate>Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel.</p>
+	<!-- Hero -->
+	<section class="bg-rose text-white">
+		<div class="section !py-32 text-center">
+			<h1 class="title-section !text-white mb-4 reveal reveal-slow" data-animate>À propos de moi</h1>
+			<p class="text-lg max-w-2xl mx-auto reveal" data-animate>Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel.</p>
 		</div>
 	</section>
 
-	
+	<!-- Presentation section -->
+	<section class="bg-white">
+		<div class="section py-16">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-16 reveal" data-animate>
+					<h2 class="title-section mb-8">Qui suis-je ?</h2>
+					<p class="para text-lg mb-6 text-noir">
+						Je suis Christelle Piguel, assistante de direction et de gestion administrative. Avec une expérience de plusieurs années dans le domaine administratif et commercial, j'ai développé une expertise dans l'accompagnement des dirigeants et des entreprises.
+					</p>
+					<p class="para text-lg text-noir">
+						Ma passion ? Vous libérer du temps en prenant en charge toutes les tâches administratives qui vous ralentissent, afin que vous puissiez vous concentrer sur ce qui compte vraiment : le développement de votre activité.
+					</p>
+				</div>
+
+				<hr class="border-rose2/30 my-16" />
+
+				<!-- Parcours -->
+				<div class="mb-16 reveal" data-animate>
+					<h2 class="title-section mb-8">Mon Parcours</h2>
+					<div class="space-y-8">
+						<div class="border-l-4 border-rose pl-6">
+							<h3 class="text-xl font-semibold text-noir mb-2">Formation et certifications</h3>
+							<p class="para text-noir">
+								Certifiée Qualiopi, je mets à jour régulièrement mes compétences pour rester à la pointe des meilleures pratiques en gestion administrative et en outils numériques.
+							</p>
+						</div>
+						<div class="border-l-4 border-rose pl-6">
+							<h3 class="text-xl font-semibold text-noir mb-2">Expérience professionnelle</h3>
+							<p class="para text-noir">
+								J'ai accompagné plusieurs entreprises de toutes tailles dans la structuration de leur gestion administrative, la mise en place de processus efficaces et l'optimisation de leur organisation.
+							</p>
+						</div>
+						<div class="border-l-4 border-rose pl-6">
+							<h3 class="text-xl font-semibold text-noir mb-2">Spécialisations</h3>
+							<p class="para text-noir">
+								Assistanat de direction, gestion comptable, RH, commercial, formation professionnelle et organisation d'événements : mes domaines d'expertise couvrent tous les besoins administratifs de votre entreprise.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="border-rose2/30 my-16" />
+
+				<!-- Valeurs -->
+				<div class="mb-16 reveal" data-animate>
+					<h2 class="title-section mb-8">Mes Valeurs</h2>
+					<div class="grid md:grid-cols-2 gap-8">
+						<div class="bg-ivoire p-8 rounded-lg">
+							<h3 class="text-lg font-semibold text-rose mb-3">📋 Rigueur</h3>
+							<p class="para text-noir">
+								L'exactitude et la précision sont au cœur de mon travail. Je veille à ce que chaque détail soit traité avec soin.
+							</p>
+						</div>
+						<div class="bg-ivoire p-8 rounded-lg">
+							<h3 class="text-lg font-semibold text-rose mb-3">⚡ Efficacité</h3>
+							<p class="para text-noir">
+								J'optimise les processus pour gagner du temps et réduire les coûts. Faire plus avec moins, c'est mon leitmotiv.
+							</p>
+						</div>
+						<div class="bg-ivoire p-8 rounded-lg">
+							<h3 class="text-lg font-semibold text-rose mb-3">🤝 Discrétion</h3>
+							<p class="para text-noir">
+								Vos données et vos secrets d'affaires sont en sécurité. Je respecte strictement la confidentialité.
+							</p>
+						</div>
+						<div class="bg-ivoire p-8 rounded-lg">
+							<h3 class="text-lg font-semibold text-rose mb-3">💡 Adaptabilité</h3>
+							<p class="para text-noir">
+								Chaque entreprise est unique. Je m'adapte à vos besoins spécifiques et à votre culture d'entreprise.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="border-rose2/30 my-16" />
+
+				<!-- Approche -->
+				<div class="reveal" data-animate>
+					<h2 class="title-section mb-8">Mon Approche</h2>
+					<p class="para text-lg mb-6 text-noir">
+						Je crois en une approche personnalisée et collaborative. Avant de vous proposer une solution, je prends le temps de comprendre votre contexte, vos défis et vos objectifs. Ensemble, nous définissons un plan d'action clair et réaliste.
+					</p>
+					<p class="para text-lg text-noir">
+						Mon objectif ? Devenir votre partenaire de confiance, quelqu'un sur qui vous pouvez compter pour sécuriser votre gestion administrative et vous permettre de vous concentrer sur votre cœur de métier.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- CTA -->
 	<section class="bg-brun text-white text-center">
 		<div class="section !py-16">
