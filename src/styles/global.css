@@ -88,13 +88,14 @@
 
   /* Taille standardisée pour les héros (mobile / desktop) */
   .hero-size {
-    /* valeur mobile par défaut */
-    min-height: 40vh;
+    /* valeur mobile par défaut - agrandie */
+    min-height: 60vh;
   }
 
   @media (min-width: 768px) {
     .hero-size {
-      min-height: 58vh;
+      /* valeur desktop agrandie */
+      min-height: 78vh;
     }
   }
 }
