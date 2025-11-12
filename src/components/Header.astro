@@ -9,18 +9,23 @@
 	aria-label="Navigation sticky"
 >
 	<div class="max-w-[100rem] mx-auto px-10 py-3">
-		<ul class="flex items-center justify-between text-[11px] md:text-[13px] uppercase tracking-[0.35em] font-title">
-			<li class="opacity-90 hover:opacity-100 transition"><a href="/">Accueil</a></li>
-			<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
-			
-			<!-- Service au centre -->
-			<li class="mx-6 opacity-90 hover:opacity-100 transition">
-				<a href="/services">Service</a>
-			</li>
-			
-			<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
-			<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
-		</ul>
+		<div class="flex items-center justify-between">
+			<!-- desktop links -->
+			<ul class="hidden md:flex items-center gap-6 text-[11px] md:text-[13px] uppercase tracking-[0.35em] font-title">
+				<li class="opacity-90 hover:opacity-100 transition"><a href="/">Accueil</a></li>
+				<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
+				<li class="mx-6 opacity-90 hover:opacity-100 transition"><a href="/services">Service</a></li>
+				<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
+				<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
+			</ul>
+
+			<!-- mobile hamburger -->
+			<button id="mobile-toggle-sticky" class="md:hidden p-2 rounded bg-rose/10 hover:bg-rose/20" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+					<path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</div>
 	</div>
 </nav>
 
@@ -28,18 +33,22 @@
 <header id="hero-header" class="relative isolate bg-rose text-white overflow-hidden">
 	<div class="section !py-4">
 		<nav aria-label="Navigation principale">
-			<ul class="flex items-center justify-between text-[13px] md:text-sm uppercase tracking-[0.35em] font-title">
-				<li class="opacity-90 hover:opacity-100 transition"><a href="/">Accueil</a></li>
-				<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
-				
-				<!-- Service au centre -->
-				<li class="mx-8 opacity-90 hover:opacity-100 transition">
-					<a href="/services">Service</a>
-				</li>
-				
-				<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
-				<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
-			</ul>
+			<div class="flex items-center justify-between">
+				<ul class="hidden md:flex items-center gap-8 text-[13px] md:text-sm uppercase tracking-[0.35em] font-title">
+					<li class="opacity-90 hover:opacity-100 transition"><a href="/">Accueil</a></li>
+					<li class="opacity-90 hover:opacity-100 transition"><a href="#presentation">Présentation</a></li>
+					<li class="mx-8 opacity-90 hover:opacity-100 transition"><a href="/services">Service</a></li>
+					<li class="opacity-90 hover:opacity-100 transition"><a href="/blog">Blog</a></li>
+					<li class="opacity-90 hover:opacity-100 transition"><a href="#contact">Contact</a></li>
+				</ul>
+
+				<!-- mobile hamburger -->
+				<button id="mobile-toggle" class="md:hidden p-2 rounded bg-rose/10 hover:bg-rose/20" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu">
+					<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+						<path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
 		</nav>
 	</div>
 
@@ -61,32 +70,108 @@
 	</div>
 </header>
 
-<script>
-	// Script pour afficher/masquer le header sticky
-	(function() {
-		const heroHeader = document.getElementById('hero-header');
-		const stickyHeader = document.getElementById('sticky-header');
-		
-		if (!heroHeader || !stickyHeader) return;
+<!-- Mobile menu (shared by hero and sticky header) -->
+<div id="mobile-menu" class="fixed inset-0 z-60 bg-black/60 hidden">
+	<div class="absolute top-0 right-0 w-[85%] max-w-xs h-full bg-white p-6 shadow-lg overflow-auto">
+		<button id="mobile-close" class="mb-6 p-2 rounded bg-gray-100 hover:bg-gray-200" aria-label="Fermer le menu">
+			✕
+		</button>
+		<nav aria-label="Menu mobile">
+			<ul class="flex flex-col gap-4 uppercase tracking-[0.35em] font-title text-sm">
+				<li><a href="/" class="block" data-close>Accueil</a></li>
+				<li><a href="#presentation" class="block" data-close>Présentation</a></li>
+				<li><a href="/services" class="block" data-close>Service</a></li>
+				<li><a href="/blog" class="block" data-close>Blog</a></li>
+				<li><a href="#contact" class="block" data-close>Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
 
+<script>
+// Script pour afficher/masquer le header sticky + menu mobile
+(function() {
+	// Sticky header observer
+	const heroHeader = document.getElementById('hero-header');
+	const stickyHeader = document.getElementById('sticky-header');
+
+	if (heroHeader && stickyHeader) {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						// Le hero est visible, cacher le sticky header
 						stickyHeader.classList.add('-translate-y-full');
 					} else {
-						// Le hero n'est plus visible, afficher le sticky header
 						stickyHeader.classList.remove('-translate-y-full');
 					}
 				});
 			},
-			{
-				threshold: 0,
-				rootMargin: '-1px'
-			}
+			{ threshold: 0, rootMargin: '-1px' }
 		);
 
 		observer.observe(heroHeader);
-	})();
+	}
+
+	// Mobile menu toggling (shared overlay)
+	const mobileToggle = document.getElementById('mobile-toggle');
+	const mobileToggleSticky = document.getElementById('mobile-toggle-sticky');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const mobileClose = document.getElementById('mobile-close');
+
+	function openMobileMenu() {
+		if (!mobileMenu) return;
+		mobileMenu.classList.remove('hidden');
+		document.body.classList.add('overflow-hidden');
+		// set aria-expanded on both buttons if present
+		if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+		if (mobileToggleSticky) mobileToggleSticky.setAttribute('aria-expanded', 'true');
+		// focus first link for a11y
+		const firstLink = mobileMenu.querySelector('a');
+		if (firstLink) firstLink.focus();
+	}
+
+	function closeMobileMenu() {
+		if (!mobileMenu) return;
+		mobileMenu.classList.add('hidden');
+		document.body.classList.remove('overflow-hidden');
+		if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+		if (mobileToggleSticky) mobileToggleSticky.setAttribute('aria-expanded', 'false');
+		// return focus to the toggle button
+		if (mobileToggle) mobileToggle.focus();
+	}
+
+	if (mobileToggle) mobileToggle.addEventListener('click', (e) => {
+		e.preventDefault();
+		const isOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+		(isOpen ? closeMobileMenu : openMobileMenu)();
+	});
+
+	if (mobileToggleSticky) mobileToggleSticky.addEventListener('click', (e) => {
+		e.preventDefault();
+		const isOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+		(isOpen ? closeMobileMenu : openMobileMenu)();
+	});
+
+	if (mobileClose) mobileClose.addEventListener('click', (e) => {
+		e.preventDefault();
+		closeMobileMenu();
+	});
+
+	// Close when clicking on overlay outside the panel
+	if (mobileMenu) {
+		mobileMenu.addEventListener('click', (e) => {
+			if (e.target === mobileMenu) closeMobileMenu();
+		});
+		// Close when clicking a link inside (data-close)
+		mobileMenu.querySelectorAll('[data-close]').forEach((el) => {
+			el.addEventListener('click', () => closeMobileMenu());
+		});
+	}
+
+	// Close on Escape
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeMobileMenu();
+	});
+
+})();
 </script>
