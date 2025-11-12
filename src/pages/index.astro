@@ -7,6 +7,17 @@ const BASE = (import.meta as any).env?.BASE_URL ?? '/';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- Hero (separated from header) -->
+	<section class="bg-rose text-white">
+		<div class="section !py-12 md:!py-20 flex flex-col items-center justify-center text-center min-h-[72vh] md:min-h-[78vh]">
+			<h1 class="title-hero reveal reveal-slow" data-animate>CHRISTELLE PIGUEL</h1>
+			<p class="mt-6 uppercase tracking-[0.65em] text-white/90 text-[clamp(0.65rem,1.2vw,1.05rem)] reveal" data-animate>
+				Assistante de direction externalisée
+			</p>
+			<a href="/contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
+		</div>
+	</section>
+
 	<!-- ===== POURQUOI FAIRE APPEL ===== -->
 	<section id="reasons" class="bg-[#F7F6F4]">
 		<div class="section">
