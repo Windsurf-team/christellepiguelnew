@@ -52,25 +52,7 @@
 		</nav>
 	</div>
 
-	<!-- Volute flottante (à remplacer par votre image) -->
-	<img
-		id="volute-parallax"
-		src="/logo.svg"
-		alt=""
-		class="pointer-events-none select-none absolute inset-0 m-auto w-[min(50vw,600px)] opacity-20 -z-10 animate-float-slow"
-	/>
-
-	<!-- Hero (can be customized per page via slot) -->
-	<slot name="hero">
-		<!-- Default hero content for homepage -->
-			<div class="section !py-0 flex flex-col items-center justify-center text-center hero-size">
-			<h1 class="title-hero reveal reveal-slow" data-animate>CHRISTELLE PIGUEL</h1>
-			<p class="mt-6 uppercase tracking-[0.65em] text-white/90 text-[clamp(0.65rem,1.2vw,1.05rem)] reveal" data-animate>
-				Assistante de direction externalisée
-			</p>
-			<a href="/contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
-		</div>
-	</slot>
+</header>
 </header>
 
 <!-- Mobile menu (shared by hero and sticky header) -->
@@ -94,8 +76,8 @@
 <script>
 // Script pour afficher/masquer le header sticky + menu mobile
 (function() {
-	// Sticky header observer
-	const heroHeader = document.getElementById('hero-header');
+	// Sticky header observer — prefer observing the page hero when present
+	const heroHeader = document.getElementById('page-hero') || document.getElementById('hero-header');
 	const stickyHeader = document.getElementById('sticky-header');
 
 	if (heroHeader && stickyHeader) {

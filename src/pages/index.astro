@@ -6,7 +6,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 const BASE = (import.meta as any).env?.BASE_URL ?? '/';
 ---
 
+
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- Hero (separated from header) -->
+	<section id="page-hero" class="bg-rose text-white relative overflow-hidden">
+		<img id="volute-parallax" src="/logo.svg" alt="" class="pointer-events-none select-none absolute inset-0 m-auto w-[min(50vw,600px)] opacity-20 -z-10 animate-float-slow" />
+		<div class="section !py-0 flex flex-col items-center justify-center text-center hero-size">
+			<h1 class="title-hero reveal reveal-slow" data-animate>CHRISTELLE PIGUEL</h1>
+			<p class="mt-6 uppercase tracking-[0.65em] text-white/90 text-[clamp(0.65rem,1.2vw,1.05rem)] reveal" data-animate>
+				Assistante de direction externalisée
+			</p>
+			<a href="/contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
+		</div>
+	</section>
+
 	<!-- ===== POURQUOI FAIRE APPEL ===== -->
 	<section id="reasons" class="bg-[#F7F6F4]">
 		<div class="section">
