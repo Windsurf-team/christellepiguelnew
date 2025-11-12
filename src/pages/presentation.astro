@@ -9,27 +9,29 @@ import Hero from '../components/Hero.astro';
 >
 	<Hero title="À propos de moi" subtitle="Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel." />
 
-	<!-- Title & intro (placed outside the hero) -->
-	<section class="bg-ivoire">
-		<div class="section text-center py-8">
-			<h1 class="title-section mb-6 reveal reveal-slow" data-animate>À propos de moi</h1>
-			<p class="para text-lg max-w-3xl mx-auto reveal" data-animate>Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel.</p>
-		</div>
-	</section>
-
-	<!-- Presentation section -->
+	<!-- Presentation sections -->
 	<section class="bg-white">
 		<div class="section py-16">
 			<div class="max-w-4xl mx-auto">
 				<!-- Introduction -->
 				<div class="mb-16 reveal" data-animate>
 					<h2 class="title-section mb-8">Qui suis-je ?</h2>
-					<p class="para text-lg mb-6 text-noir">
-						Je suis Christelle Piguel, assistante de direction et de gestion administrative. Avec une expérience de plusieurs années dans le domaine administratif et commercial, j'ai développé une expertise dans l'accompagnement des dirigeants et des entreprises.
-					</p>
-					<p class="para text-lg text-noir">
-						Ma passion ? Vous libérer du temps en prenant en charge toutes les tâches administratives qui vous ralentissent, afin que vous puissiez vous concentrer sur ce qui compte vraiment : le développement de votre activité.
-					</p>
+					<div class="grid md:grid-cols-2 gap-8 items-center">
+						<div>
+							<p class="para text-lg mb-6 text-noir">
+								Je suis Christelle Piguel, assistante de direction et de gestion administrative. Avec une expérience de plusieurs années dans le domaine administratif et commercial, j'ai développé une expertise dans l'accompagnement des dirigeants et des entreprises.
+							</p>
+							<p class="para text-lg text-noir">
+								Ma passion ? Vous libérer du temps en prenant en charge toutes les tâches administratives qui vous ralentissent, afin que vous puissiez vous concentrer sur ce qui compte vraiment : le développement de votre activité.
+							</p>
+						</div>
+						<!-- Image (hidden on small screens) -->
+						<div class="hidden md:flex justify-center">
+							<div class="w-full max-w-[420px] rounded-xl overflow-hidden shadow-md">
+								<img src="/christellepiguel.png" alt="Portrait de Christelle Piguel" class="w-full h-full object-cover" />
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<hr class="border-rose2/30 my-16" />
