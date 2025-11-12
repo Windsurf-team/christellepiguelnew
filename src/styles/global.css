@@ -85,6 +85,18 @@
   .section {
     @apply max-w-[100rem] mx-auto px-10 py-16 md:py-24;
   }
+
+  /* Taille standardisée pour les héros (mobile / desktop) */
+  .hero-size {
+    /* valeur mobile par défaut */
+    min-height: 40vh;
+  }
+
+  @media (min-width: 768px) {
+    .hero-size {
+      min-height: 58vh;
+    }
+  }
 }
 
 /* Animations et utilitaires */
