@@ -1,22 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout 
 	title="Mes Services — Christelle Piguel" 
 	description="Découvrez en détail mes services d'assistanat de direction, comptable, commercial, RH, formation Qualiopi et événementiel professionnel."
 >
-	<!-- Hero Services (visuel uniquement) -->
-	<section id="page-hero" class="bg-rose text-white relative overflow-hidden">
-		<img id="volute-parallax" src="/logo.svg" alt="" aria-hidden="true" class="pointer-events-none select-none absolute inset-0 m-auto w-[min(50vw,600px)] opacity-20 z-0 animate-float-slow" />
-		<div class="section !py-0 flex flex-col items-center justify-center text-center hero-size relative z-10">
-			<h1 class="title-hero reveal reveal-slow" data-animate>CHRISTELLE PIGUEL</h1>
-			<p class="mt-6 uppercase tracking-[0.65em] text-white/90 text-[clamp(0.65rem,1.2vw,1.05rem)] reveal" data-animate>
-				Assistante de direction externalisée
-			</p>
-			<a href="/contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
-		</div>
-	</section>
+	<Hero title="Mes Services" subtitle="Une offre complète et sur mesure pour répondre à tous vos besoins en gestion administrative, commerciale, comptable, RH et formation." />
 
 	<!-- Title & intro (placed outside the hero) -->
 	<section class="bg-ivoire">

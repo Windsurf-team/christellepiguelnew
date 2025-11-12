@@ -1,24 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Hero from '../components/Hero.astro';
 
 // Base path (works when the site is deployed under a subpath)
 const BASE = (import.meta as any).env?.BASE_URL ?? '/';
+
 ---
 
-
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<!-- Hero (separated from header) -->
-	<section id="page-hero" class="bg-rose text-white relative overflow-hidden">
-		<img id="volute-parallax" src="/logo.svg" alt="" aria-hidden="true" class="pointer-events-none select-none absolute inset-0 m-auto w-[min(50vw,600px)] opacity-20 z-0 animate-float-slow" />
-		<div class="section !py-0 flex flex-col items-center justify-center text-center hero-size relative z-10">
-			<h1 class="title-hero reveal reveal-slow" data-animate>CHRISTELLE PIGUEL</h1>
-			<p class="mt-6 uppercase tracking-[0.65em] text-white/90 text-[clamp(0.65rem,1.2vw,1.05rem)] reveal" data-animate>
-				Assistante de direction externalisée
-			</p>
-			<a href="/contact" class="btn btn-onlight mt-9 reveal" data-animate>Contactez-moi</a>
-		</div>
-	</section>
+	<Hero title="CHRISTELLE PIGUEL" subtitle="Assistante de direction externalisée" ctaText="Contactez-moi" ctaHref="/contact" />
 
 	<!-- ===== POURQUOI FAIRE APPEL ===== -->
 	<section id="reasons" class="bg-[#F7F6F4]">
@@ -215,7 +206,7 @@ const BASE = (import.meta as any).env?.BASE_URL ?? '/';
 	</section>
 
 	<!-- ===== LES OUTILS ===== -->
-<section class="bg-white">
+	<section class="bg-rose2/20">
   <div class="section">
     <h2 class="title-section mb-4 reveal reveal-slow" data-animate>
       Les outils que j'utilise
