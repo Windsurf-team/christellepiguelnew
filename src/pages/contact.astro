@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Mes Services — Christelle Piguel" 
+	description="Découvrez en détail mes services d'assistanat de direction, comptable, commercial, RH, formation Qualiopi et événementiel professionnel."
+>
+	<!-- Hero Services (visuel uniquement) -->
+	<section class="bg-rose text-white">
+		<div class="section !py-20 text-center">
+			<!-- Hero décoratif, title moved below -->
+		</div>
+	</section>
+
+	<!-- ===== CONTACT ===== -->
+	<section id="contact" class="bg-ivoire">
+		<div class="max-w-7xl mx-auto px-6 py-20">
+			<div class="bg-[#C2A797] text-white rounded-2xl shadow-md p-8 md:p-12 lg:p-16">
+				
+				<h2 class="uppercase tracking-[0.35em] text-left mb-10 md:mb-12 text-[clamp(1.6rem,3.2vw,3rem)] font-semibold" style="font-family: var(--font-title);">
+					Contact
+				</h2>
+
+				<form action="#" method="POST" class="space-y-6 max-w-[1100px]">
+					<div>
+						<label for="name" class="block mb-2 uppercase tracking-[0.25em] text-[12px] opacity-90" style="font-family: var(--font-title);">Nom *</label>
+						<input id="name" name="name" type="text" required class="w-full h-11 bg-transparent border border-white/70 focus:border-white outline-none px-3 text-white placeholder-white/60 rounded-[4px]">
+					</div>
+
+					<div>
+						<label for="phone" class="block mb-2 uppercase tracking-[0.25em] text-[12px] opacity-90" style="font-family: var(--font-title);">Téléphone *</label>
+						<input id="phone" name="phone" type="tel" required class="w-full h-11 bg-transparent border border-white/70 focus:border-white outline-none px-3 text-white placeholder-white/60 rounded-[4px]">
+					</div>
+
+					<div>
+						<label for="email" class="block mb-2 uppercase tracking-[0.25em] text-[12px] opacity-90" style="font-family: var(--font-title);">Email *</label>
+						<input id="email" name="email" type="email" required class="w-full h-11 bg-transparent border border-white/70 focus:border-white outline-none px-3 text-white placeholder-white/60 rounded-[4px]">
+					</div>
+
+					<div>
+						<label for="message" class="block mb-2 uppercase tracking-[0.25em] text-[12px] opacity-90" style="font-family: var(--font-title);">Message *</label>
+						<textarea id="message" name="message" rows="5" required class="w-full bg-transparent border border-white/70 focus:border-white outline-none px-3 py-3 text-white placeholder-white/60 rounded-[4px]"></textarea>
+					</div>
+
+					<div class="flex items-start gap-3 pt-1">
+						<input id="privacy" name="privacy" type="checkbox" required class="mt-[3px] h-4 w-4 accent-white bg-transparent border border-white/70">
+						<label for="privacy" class="text-white/90 text-[14px]">J'accepte la Déclaration de confidentialité. *</label>
+					</div>
+
+					<button type="submit" class="mt-6 bg-white text-[#272626] uppercase tracking-[0.45em] text-[13px] px-8 py-3 rounded-md hover:bg-[#9B7760] hover:text-white transition">
+						Envoyer
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+</Layout>
+
+<script>
+	// Script d'animation au scroll (IntersectionObserver)
+	(function () {
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		const els = document.querySelectorAll('[data-animate]');
+		els.forEach((el) => {
+			if (!el.classList.contains('reveal')) el.classList.add('reveal');
+		});
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-inview');
+						io.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+		);
+		els.forEach((el) => io.observe(el));
+	})();
+</script>
