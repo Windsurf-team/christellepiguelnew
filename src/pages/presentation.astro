@@ -1,16 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout 
 	title="Présentation — Christelle Piguel" 
 	description="Découvrez qui je suis, mon parcours et ma passion pour l'assistanat professionnel."
 >
-	<!-- Hero -->
-	<section class="bg-rose text-white">
-		<div class="section !py-32 text-center">
-			<h1 class="title-section !text-white mb-4 reveal reveal-slow" data-animate>À propos de moi</h1>
-			<p class="text-lg max-w-2xl mx-auto reveal" data-animate>Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel.</p>
+	<Hero title="À propos de moi" subtitle="Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel." />
+
+	<!-- Title & intro (placed outside the hero) -->
+	<section class="bg-ivoire">
+		<div class="section text-center py-8">
+			<h1 class="title-section mb-6 reveal reveal-slow" data-animate>À propos de moi</h1>
+			<p class="para text-lg max-w-3xl mx-auto reveal" data-animate>Découvrez mon parcours et ma mission : vous libérer du temps pour vous concentrer sur l'essentiel.</p>
 		</div>
 	</section>
 
